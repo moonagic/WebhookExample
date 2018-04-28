@@ -19,3 +19,16 @@ var url = ''
 npm install
 node index2.js
 ```
+
+## 简单的systemd启动服务
+```
+[Unit]
+Description=GithubWebhookService
+
+[Service]
+WorkingDirectory=/home/webhook
+ExecStart=/usr/bin/node path/to/index2.js
+
+[Install]
+WantedBy=multi-user.target
+```
